@@ -204,13 +204,14 @@ fn decoders() -> HashMap<&'static str, DecoderFn> {
     ])
 }
 
-fn add_stream_host(input: &str) -> String {
+pub fn add_stream_host(input: &str) -> String {
     let host = "thrumbleandjaxon.com";
     input
         .replace("{v1}", host)
         .replace("{v2}", host)
         .replace("{v3}", host)
         .replace("{v4}", host)
+        .replace("{v5}", host)
 }
 
 pub fn get_stream_link(id: &str, decoded_text: &str) -> Option<String> {
