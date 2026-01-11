@@ -22,7 +22,7 @@ fn request_base_url(headers: &HeaderMap) -> String {
         .and_then(|v| v.to_str().ok())
         .unwrap_or("127.0.0.1:4000");
 
-    let scheme = headers
+    let _scheme = headers
         .get("x-forwarded-proto")
         .and_then(|v| v.to_str().ok())
         .unwrap_or("http");
