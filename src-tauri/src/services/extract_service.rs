@@ -125,7 +125,7 @@ pub async fn extract_stream_link(
         println!("Encoded values missing, falling back to regex extraction");
         // Fallback: regex extraction
         let regex = Regex::new(
-        r"https://(?:tmstr1|tmstr2)\.\{v\d+\}/(?:pl|cdnstr)/[A-Za-z0-9._\-]+/(?:master\.m3u8|list\.m3u8)"
+        r"https://(?:tmstr\d*)\.\{v\d+\}/(?:pl|cdnstr)/[A-Za-z0-9._\-]+/(?:master\.m3u8|list\.m3u8)"
     ).map_err(|_| "invalid regex")?;
 
         let first_url = regex
